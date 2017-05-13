@@ -1,33 +1,23 @@
-<nav class="navbar">
-  Simple
+<nav class="navbar navbar-light bg-faded">
+  <h1>ABC Simple Template</h1>
 </nav>
+<div class="p-2">
+  <div class="jumbotron">
+    <h1 class="title display-3">Hi, I am ABC!</h1>
+    <p class="lead">
+      I can help you making apps as easy as A! B! C! Just follow the steps and you are there already! And we welcome supporters
+      in anyway who can help like tutorial documentating, Q&amp;A Forum management and business partners.
+    </p>
+    <p>
+      <a class="btn btn-success" href="http://abcframework.com">Read more</a>
+    </p>
+  </div>
 
-This is simple template
-
-
-
-
-
-
-
-
-<div class="jumbotron">
-  <h1 class="title display-3">Hi, I am ABC!</h1>
-  <p class="lead">
-    I can help you making apps as easy as A! B! C! Just follow the steps and you are there already! And we welcome supporters
-    in anyway who can help like tutorial documentating, Q&amp;A Forum management and business partners.
-  </p>
   <p>
-    <button class="btn btn-success" routerLink="/about">Read more</button>
+    Please visit www.abcframework.com and leave your comments.
+  </p>
+
+  <p *ngIf="app.device">
+    Hey, you are on {{ app.device.platform }}.
   </p>
 </div>
-
-<p>
-  Abc framework was born early 2017 and it is very new at this time. Please visit www.abcframework.com and leave your comments.
-</p>
-
-
-
-<p *ngIf="app.device">
-  Hey, you are on {{ app.device.platform }}.
-</p>

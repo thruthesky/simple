@@ -7,11 +7,6 @@ import { RouterModule, Routes } from '@angular/router';
 // global custom error handler. need help here.
 import { CustomErrorHandler } from './app.error-handler';
 
-// abc componnents. need help here. Make it npm modules or not?
-//import { AbcComponents } from './abc-components/abc-components.module';
-
-//import { AbcComponents } from 'abc-components';
-
 
 // app share service.
 import { App } from './services/app';
@@ -21,16 +16,9 @@ import { App } from './services/app';
 import { AppComponent } from './app.component';
 
 
-import { HeaderComponent } from './components/header/header';
-import { UserIconComponent } from './components/user-icon/user-icon';
-
-
 // page components.
 import { HomePage } from './pages/home/home';
-import { AboutPage } from './pages/about/about';
-import { LoginPage } from './pages/login/login';
-import { RegisterPage } from './pages/register/register';
-import { ProfilePage } from './pages/profile/profile';
+
 
 
 // angulare fire 2
@@ -41,10 +29,6 @@ import { environment } from '../environments/environment';
 
 
 const appRoutes: Routes = [
-  { path: 'login', component: LoginPage },
-  { path: 'register', component: RegisterPage },
-  { path: 'profile', component: ProfilePage },
-  { path: 'about', component: AboutPage },
   { path: '', component: HomePage, pathMatch: 'full' },
   { path: '**', component: HomePage }
 ]
@@ -52,13 +36,7 @@ const appRoutes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
-    UserIconComponent,
-    HomePage,
-    AboutPage,
-    LoginPage,
-    RegisterPage,
-    ProfilePage
+    HomePage
   ],
   imports: [
     BrowserModule,
