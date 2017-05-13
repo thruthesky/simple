@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <title>ABC</title>
-  <base href="/android_asset/www/">
+  <base href="/">
   
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
@@ -12,12 +12,12 @@
 </head>
 <body>
   <app-root>Loading...</app-root>
-<script type="text/javascript" src="http://10.0.2.2:3000/inline.bundle.js"></script><script type="text/javascript" src="http://10.0.2.2:3000/polyfills.bundle.js"></script><script type="text/javascript" src="http://10.0.2.2:3000/styles.bundle.js"></script><script type="text/javascript" src="http://10.0.2.2:3000/vendor.bundle.js"></script><script type="text/javascript" src="http://10.0.2.2:3000/main.bundle.js"></script>
+<script type="text/javascript" src="http://localhost:3000/inline.bundle.js"></script><script type="text/javascript" src="http://localhost:3000/polyfills.bundle.js"></script><script type="text/javascript" src="http://localhost:3000/styles.bundle.js"></script><script type="text/javascript" src="http://localhost:3000/vendor.bundle.js"></script><script type="text/javascript" src="http://localhost:3000/main.bundle.js"></script>
 <script src="cordova.js"></script>
-<script src="http://10.0.2.2:3000/socket.io/socket.io.js"></script>
+<script src="http://localhost:3000/socket.io/socket.io.js"></script>
 <script>
-  console.log("Connect to desktop server through socket.io: 10.0.2.2:3000");
-  var socket = io('http://10.0.2.2:3000');
+  console.log("Connect to desktop server through socket.io: localhost:3000");
+  var socket = io('http://localhost:3000');
   socket.on('reload', function (data) {
     console.log(data);
     // window.location.reload(true);
