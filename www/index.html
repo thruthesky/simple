@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>ABC</title>
+  <base href="/android_asset/www/">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="stylesheet" href="./assets/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./assets/font-awesome/css/font-awesome.min.css">
+</head>
+<body>
+  <app-root>Loading...</app-root>
+<script type="text/javascript" src="http://10.0.2.2:3000/inline.bundle.js"></script><script type="text/javascript" src="http://10.0.2.2:3000/polyfills.bundle.js"></script><script type="text/javascript" src="http://10.0.2.2:3000/styles.bundle.js"></script><script type="text/javascript" src="http://10.0.2.2:3000/vendor.bundle.js"></script><script type="text/javascript" src="http://10.0.2.2:3000/main.bundle.js"></script>
+<script src="cordova.js"></script>
+<script src="http://10.0.2.2:3000/socket.io/socket.io.js"></script>
+<script>
+  console.log("Connect to desktop server through socket.io: 10.0.2.2:3000");
+  var socket = io('http://10.0.2.2:3000');
+  socket.on('reload', function (data) {
+    console.log(data);
+    // window.location.reload(true);
+    location.href="index.html?dummy=" + ( new Date ).getTime(); // dummy 값을 주어서, 새로 내용을 불러온다. 주의: hard-cache-clear 가 아니기 때문에 새로운 .js .css 가 로드되지 않을 수 있다.
+  });
+  socket.on('error', function (data) {
+    console.error(data);
+    displayError( data );
+  });
+
+    function displayError( data ) {
+        var handler = document.querySelector('#custom-error-handler');
+        if ( !handler ) {
+            var div = document.createElement('div');
+            div.id = "custom-error-handler";
+            document.body.insertBefore(div, document.body.firstChild);
+            handler = document.querySelector('#custom-error-handler');
+        }
+        var div = document.createElement('div');
+        div.innerText = data;
+
+        var h2 = document.createElement('h2');
+        h2.innerText = 'build error'
+
+        handler.appendChild(h2);
+        handler.appendChild(div);
+    }
+
+</script>
+    
+</body>
+</html>
