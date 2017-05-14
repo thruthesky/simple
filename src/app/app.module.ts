@@ -28,6 +28,8 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 import { environment } from '../environments/environment';
 
 
+import { BootFontModule } from 'bootfont';
+
 const appRoutes: Routes = [
   { path: '', component: HomePage, pathMatch: 'full' },
   { path: '**', component: HomePage }
@@ -45,7 +47,8 @@ const appRoutes: Routes = [
     RouterModule.forRoot( appRoutes ),
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    BootFontModule
   ],
   providers: [
     App,

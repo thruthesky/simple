@@ -4,7 +4,9 @@ import { App } from './../../services/app';
 
 
 @Component({
-    templateUrl: 'home.html'
+    selector: 'home-page',
+    templateUrl: 'home.html',
+    styleUrls: ['./home.scss']
 })
 
 export class HomePage implements OnInit {
